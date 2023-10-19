@@ -13,9 +13,9 @@ public class Reverse {
 
         // Reverse the numbers in the array
         for (int i = 0; i < arr.length / 2; i++) {
-            int temp = arr[i];
+            int a = arr[i];
             arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+            arr[arr.length - 1 - i] = a;
         }
 
         // Sort the reversed array
@@ -44,10 +44,10 @@ public class Reverse {
         }
         System.out.println();
 
-        int[] sortedArr = getSorted(arr);
+        int[] sorted = getSorted(arr);
 
         System.out.println("Sorted array with reversed elements:");
-        for (int num : sortedArr) {
+        for (int num : sorted) {
             System.out.print(num + " ");
         }
 
