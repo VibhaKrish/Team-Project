@@ -14,17 +14,17 @@ public class Duplicate{
         }
 
         // Convert the set to an array
-        int[] resultArray = new int[uniqueElements.size()];
+        int[] a = new int[uniqueElements.size()];
         int index = 0;
         for (int num : uniqueElements) {
-            resultArray[index++] = num;
+            a[index++] = num;
         }
 
         // Sort the resulting array in descending order
-        Arrays.sort(resultArray);
-        reverseArray(resultArray);
+        Arrays.sort(a);
+        reverseArray(a);
 
-        return resultArray;
+        return a;
     }
 
     private static void reverseArray(int[] arr) {
@@ -53,17 +53,17 @@ public class Duplicate{
             arr[i] = scanner.nextInt();
         }
 
-        int[] modifiedArr = modifyArray(arr);
+        int[] newArr = modifyArray(arr);
 
         // array without duplicates
         System.out.println("Modified Array (without duplicates):");
-        for (int num : modifiedArr) {
+        for (int num : newArr) {
             System.out.print(num + " ");
         }
         
         System.out.println("\nModified Array in Descending Order:");
-        for (int i = modifiedArr.length - 1; i >= 0; i--) {
-            System.out.print(modifiedArr[i] + " ");
+        for (int i = newArr.length - 1; i >= 0; i--) {
+            System.out.print(newArr[i] + " ");
         }
         scanner.close();  
     }
