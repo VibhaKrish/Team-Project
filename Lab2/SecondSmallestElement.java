@@ -1,13 +1,14 @@
 package Examples;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class SecondSmallestElement {
 
     public static int getSecondSmallest(int[] arr) {
         // check if the array has at least two elements
         if (arr.length < 2) {
-            throw new IllegalArgumentException("Min array length has to be 2");
+            throw new IllegalArgumentException("Minimum array length has to be 2");
         }
 
         // sort in ascending order
@@ -18,8 +19,23 @@ public class SecondSmallestElement {
     }
 
     public static void main(String[] args) {
-        int[] arr = {5, 3, 1, 7, 4, 6, 2};
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements in the array: ");
+        int numElements = scanner.nextInt();
+
+        int[] arr = new int[numElements];
+        System.out.println("Enter the elements of the array:");
+
+        for (int i = 0; i < numElements; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            arr[i] = scanner.nextInt();
+        }
+
         int secondSmallest = getSecondSmallest(arr);
         System.out.println("Second smallest element: " + secondSmallest);
+
+        scanner.close();
     }
 }
+
